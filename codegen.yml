@@ -1,0 +1,15 @@
+overwrite: true
+schema: "src/graphql/modules/index.ts"
+documents: null
+require:
+  - ts-node/register/transpile-only
+generates:
+  src/graphql/generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-resolvers"
+      - "typescript-react-apollo"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
